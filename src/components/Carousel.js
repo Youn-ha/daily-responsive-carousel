@@ -431,12 +431,8 @@ class Carousel extends Component {
         if (this.props.centerMode && this.props.axis === 'horizontal') {
             let currentPosition = -index * this.props.centerSlidePercentage;
             const lastPosition = childrenLength - 1;
-
-            if (index && (index !== lastPosition || this.props.infiniteLoop)) {
-                currentPosition += (100 - this.props.centerSlidePercentage) / 2;
-            } else if (index === lastPosition) {
-                currentPosition += 100 - this.props.centerSlidePercentage;
-            }
+            
+            currentPosition += (100 - this.props.centerSlidePercentage) / 2;
 
             return currentPosition;
         }
